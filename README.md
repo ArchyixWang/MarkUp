@@ -67,10 +67,7 @@ MarkUp（马克派）是一个基于 React、FastAPI 和 MongoDB 构建的数据
   <sub>通过完整演示视频快速了解 MarkUp 的任务生产、标注作答、AI 预审、人工审核与结果交付链路。</sub>
 </p>
 
-<p align="center">
-  <video src="MarkUp-交付文档/markup_demo.mp4" controls width="92%"></video>
-  <br>
-</p>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116725953665700&bvid=BV1eRER6fEeu&cid=39015219588&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ---
 
