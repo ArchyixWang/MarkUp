@@ -1,0 +1,150 @@
+.agent-avatar {
+  --agent-size: 132px;
+  --agent-eye-x: 0px;
+  --agent-eye-y: 0px;
+  display: inline-grid;
+  width: var(--agent-size);
+  height: var(--agent-size);
+  place-items: center;
+  contain: layout paint;
+}
+
+.agent-avatar__orb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255, 255, 255, 0.72) 0 11%, transparent 30%),
+    radial-gradient(circle at 58% 66%, #5f9fff 0%, #5b9df8 34%, #3f86ed 68%, #2f75df 100%);
+  box-shadow:
+    inset 0 10px 18px rgba(255, 255, 255, 0.36),
+    inset 0 -16px 28px rgba(16, 88, 205, 0.2),
+    0 10px 24px rgba(37, 99, 235, 0.16);
+}
+
+.agent-avatar__orb::after {
+  position: absolute;
+  inset: 16%;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 66%);
+  content: '';
+  pointer-events: none;
+}
+
+.agent-avatar__glint {
+  position: absolute;
+  top: 20%;
+  left: 24%;
+  width: 22%;
+  height: 18%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.agent-avatar__eyes {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  display: flex;
+  gap: calc(var(--agent-size) * 0.13);
+  transform: translate(
+    calc(-50% + var(--agent-eye-x)),
+    var(--agent-eye-y)
+  );
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  z-index: 1;
+}
+
+.agent-avatar__eye {
+  width: calc(var(--agent-size) * 0.082);
+  height: calc(var(--agent-size) * 0.18);
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow:
+    0 1px 4px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 2px rgba(37, 99, 235, 0.08);
+  transform-origin: 50% 50%;
+}
+
+.agent-avatar--idle .agent-avatar__orb {
+  animation: agent-avatar-idle-head 4.2s ease-in-out infinite;
+  transform-origin: 50% 64%;
+}
+
+.agent-avatar--idle .agent-avatar__eyes {
+  animation: agent-avatar-idle-eyes 4.2s ease-in-out infinite;
+}
+
+.agent-avatar--idle .agent-avatar__eye {
+  animation: agent-avatar-blink 4.8s ease-in-out infinite;
+}
+
+.agent-avatar--idle .agent-avatar__eye:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+@keyframes agent-avatar-idle-head {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  18% {
+    transform: rotate(-7deg);
+  }
+
+  36% {
+    transform: rotate(6deg);
+  }
+
+  58% {
+    transform: rotate(-3deg);
+  }
+
+  78% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes agent-avatar-idle-eyes {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  20% {
+    transform: translate(calc(-50% - 1px), 0);
+  }
+
+  42% {
+    transform: translate(calc(-50% + 1px), 0);
+  }
+}
+
+@keyframes agent-avatar-blink {
+  0%,
+  82%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  86%,
+  90% {
+    transform: scaleY(0.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agent-avatar__eyes,
+  .agent-avatar--idle .agent-avatar__orb,
+  .agent-avatar--idle .agent-avatar__eyes,
+  .agent-avatar--idle .agent-avatar__eye {
+    animation: none;
+    transition: none;
+  }
+}

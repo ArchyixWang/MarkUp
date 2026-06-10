@@ -1,0 +1,606 @@
+.platform-agent-drawer-root {
+  top: var(--nav-height) !important;
+  height: calc(100dvh - var(--nav-height)) !important;
+  pointer-events: none;
+  z-index: 1300;
+}
+
+.platform-agent-drawer-root .ant-drawer-content-wrapper {
+  height: 100% !important;
+  pointer-events: auto;
+}
+
+.platform-agent-drawer-root .ant-drawer-mask {
+  display: none;
+}
+
+.platform-agent-drawer .ant-drawer-header {
+  display: none;
+}
+
+.platform-agent-drawer .ant-drawer-content {
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.platform-agent-drawer .ant-drawer-wrapper-body {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.platform-agent-drawer .ant-drawer-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  padding: 0;
+  background: #f8fafc;
+}
+
+.platform-agent-drawer-root--sidebar .ant-drawer-content-wrapper {
+  width: min(420px, calc(100vw - 16px)) !important;
+}
+
+.platform-agent-drawer-root--floating {
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  top: 0 !important;
+}
+
+.platform-agent-drawer-root--floating .ant-drawer-content-wrapper {
+  position: fixed !important;
+  left: var(--platform-agent-floating-left) !important;
+  top: var(--platform-agent-floating-top) !important;
+  width: var(--platform-agent-floating-width) !important;
+  height: var(--platform-agent-floating-height) !important;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 22px 58px rgba(15, 23, 42, 0.18);
+}
+
+.platform-agent-drawer-root--floating .ant-drawer-content {
+  border-radius: inherit;
+}
+
+.platform-agent-drawer-root--expanded {
+  position: fixed !important;
+  inset: var(--nav-height) 0 0 0 !important;
+  width: 100vw !important;
+  height: calc(100dvh - var(--nav-height)) !important;
+}
+
+.platform-agent-drawer-root--expanded .ant-drawer-content-wrapper {
+  position: fixed !important;
+  inset: calc(var(--nav-height) + 12px) 12px 12px 12px !important;
+  width: auto !important;
+  height: auto !important;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.16);
+}
+
+.platform-agent-drawer-root--expanded .ant-drawer-content {
+  border-radius: inherit;
+}
+
+.platform-agent-panel {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  grid-template-rows: 54px minmax(0, 1fr) auto;
+  background: #f8fafc;
+  color: #101828;
+}
+
+.platform-agent-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px 10px 16px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.platform-agent-toolbar-primary {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.platform-agent-drag-zone {
+  display: none;
+}
+
+.platform-agent-drawer-root--floating .platform-agent-drag-zone {
+  display: block;
+  min-width: 36px;
+  flex: 1 1 auto;
+  align-self: stretch;
+  cursor: grab;
+  touch-action: none;
+}
+
+.platform-agent-drawer-root--floating .platform-agent-drag-zone:active {
+  cursor: grabbing;
+}
+
+.platform-agent-toolbar button,
+.platform-agent-toolbar .ant-btn,
+.platform-agent-toolbar .ant-popover-open,
+.platform-agent-toolbar a {
+  cursor: pointer;
+}
+
+.platform-agent-thread-title {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 220px;
+  height: 36px;
+  gap: 8px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #111827;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.platform-agent-thread-title:hover,
+.platform-agent-thread-title:focus-visible {
+  background: rgba(15, 23, 42, 0.06);
+  outline: none;
+}
+
+.platform-agent-thread-title span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platform-agent-conversations-popover .ant-popover-inner {
+  padding: 8px;
+}
+
+.platform-agent-conversations {
+  width: 280px;
+  max-height: min(420px, calc(100dvh - var(--nav-height) - 80px));
+  overflow: auto;
+}
+
+.platform-agent-conversations--aside {
+  width: 100%;
+  max-height: none;
+}
+
+.platform-agent-conversations .ant-conversations,
+.platform-agent-conversations .ant-x-conversations {
+  width: 100%;
+}
+
+.platform-agent-toolbar-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4px;
+}
+
+.platform-agent-toolbar-actions .ant-btn {
+  width: 34px;
+  height: 34px;
+  color: #475569;
+}
+
+.platform-agent-workspace {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.platform-agent-conversations-aside {
+  display: none;
+  min-height: 0;
+  overflow: auto;
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.platform-agent-drawer-root--expanded .platform-agent-workspace {
+  grid-template-columns: 268px minmax(0, 1fr);
+}
+
+.platform-agent-drawer-root--expanded .platform-agent-conversations-aside {
+  display: block;
+  padding: 10px 8px;
+}
+
+.platform-agent-canvas {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  padding: 10px 12px;
+  background:
+    radial-gradient(circle, rgba(37, 99, 235, 0.06) 1px, transparent 1.2px),
+    linear-gradient(180deg, #fbfdff 0%, #f8fafc 100%);
+  background-size: 18px 18px, auto;
+}
+
+.platform-agent-resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  padding: 0;
+  border-bottom-right-radius: 18px;
+  background:
+    linear-gradient(135deg, transparent 0 45%, rgba(71, 85, 105, 0.45) 45% 55%, transparent 55%),
+    linear-gradient(135deg, transparent 0 62%, rgba(71, 85, 105, 0.32) 62% 72%, transparent 72%);
+  cursor: nwse-resize;
+  touch-action: none;
+}
+
+.platform-agent-resize-handle::before {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 44px;
+  height: 44px;
+  content: '';
+}
+
+.platform-agent-interacting,
+.platform-agent-interacting * {
+  user-select: none !important;
+}
+
+.platform-agent-support-strip {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 36px;
+  margin-bottom: 8px;
+  padding: 6px 8px 6px 12px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: none;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.platform-agent-support-strip .ant-btn {
+  border-radius: 999px;
+  font-weight: 650;
+}
+
+.platform-agent-conversation {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.platform-agent-empty {
+  display: grid;
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  align-content: center;
+  gap: 18px;
+  overflow: auto;
+  padding: 8px 6px 14px;
+  width: 100%;
+}
+
+.platform-agent-welcome {
+  display: grid !important;
+  justify-items: center;
+  gap: 12px;
+  padding: 0 !important;
+  background: transparent !important;
+  text-align: center;
+}
+
+.platform-agent-welcome .agent-avatar {
+  filter: drop-shadow(0 18px 24px rgba(37, 99, 235, 0.12));
+}
+
+.platform-agent-welcome .ant-welcome-title,
+.platform-agent-welcome .ant-x-welcome-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: 23px;
+  font-weight: 760;
+  line-height: 1.15;
+}
+
+.platform-agent-welcome .ant-welcome-description,
+.platform-agent-welcome .ant-x-welcome-description {
+  max-width: 320px;
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.platform-agent-prompts {
+  width: min(100%, 352px);
+  margin: 0 auto;
+}
+
+.platform-agent-prompts .ant-prompts-title,
+.platform-agent-prompts .ant-x-prompts-title {
+  margin-bottom: 10px !important;
+  color: #475569 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0;
+}
+
+.platform-agent-prompts .ant-prompts-list,
+.platform-agent-prompts .ant-x-prompts-list {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.platform-agent-prompts .ant-prompts-item,
+.platform-agent-prompts .ant-x-prompts-item {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 11px 12px !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.045);
+  cursor: pointer;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.platform-agent-prompts .ant-prompts-item:hover,
+.platform-agent-prompts .ant-x-prompts-item:hover {
+  border-color: rgba(37, 99, 235, 0.34) !important;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+.platform-agent-prompts .ant-prompts-item-icon,
+.platform-agent-prompts .ant-x-prompts-item-icon {
+  display: inline-grid !important;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: #eef5ff;
+  color: #2563eb;
+  font-size: 16px;
+}
+
+.platform-agent-prompts .ant-prompts-item-content,
+.platform-agent-prompts .ant-x-prompts-item-content {
+  min-width: 0;
+}
+
+.platform-agent-prompts .ant-prompts-item-label,
+.platform-agent-prompts .ant-x-prompts-item-label {
+  color: #111827 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+.platform-agent-prompts .ant-prompts-item-description,
+.platform-agent-prompts .ant-x-prompts-item-description {
+  color: #667085 !important;
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+.platform-agent-bubble-list {
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  padding: 4px 0 10px;
+  width: 100%;
+}
+
+.platform-agent-panel .ant-bubble-list,
+.platform-agent-panel .ant-x-bubble-list {
+  height: 100%;
+  min-height: 0;
+}
+
+.platform-agent-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.platform-agent-sources .ant-sources,
+.platform-agent-sources .ant-x-sources {
+  max-width: 100%;
+}
+
+.platform-agent-source-paths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.platform-agent-source-paths span {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  overflow: hidden;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.platform-agent-composer {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 -8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.platform-agent-inline-alert.ant-alert {
+  margin: 0;
+}
+
+.platform-agent-sender textarea {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.platform-agent-markdown {
+  color: inherit;
+  font-size: 14px;
+}
+
+.platform-agent-markdown p {
+  margin: 0 0 8px;
+}
+
+.platform-agent-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.platform-agent-markdown ol,
+.platform-agent-markdown ul {
+  margin: 6px 0 8px;
+  padding-left: 20px;
+}
+
+.platform-agent-markdown li {
+  margin: 3px 0;
+}
+
+.platform-agent-markdown strong {
+  font-weight: 700;
+}
+
+@media (max-width: 560px) {
+  .platform-agent-drawer-root,
+  .platform-agent-drawer-root--floating,
+  .platform-agent-drawer-root--expanded,
+  .platform-agent-drawer-root--sidebar {
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    top: 0 !important;
+  }
+
+  .platform-agent-drawer-root .ant-drawer-content-wrapper,
+  .platform-agent-drawer-root--floating .ant-drawer-content-wrapper,
+  .platform-agent-drawer-root--expanded .ant-drawer-content-wrapper,
+  .platform-agent-drawer-root--sidebar .ant-drawer-content-wrapper {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .platform-agent-drawer-root--expanded .ant-drawer-content,
+  .platform-agent-drawer-root--floating .ant-drawer-content,
+  .platform-agent-drawer-root--sidebar .ant-drawer-content {
+    border-radius: 0;
+  }
+
+  .platform-agent-panel {
+    grid-template-rows: 54px minmax(0, 1fr) auto;
+  }
+
+  .platform-agent-toolbar {
+    padding-inline: 10px;
+    cursor: default;
+  }
+
+  .platform-agent-toolbar-actions {
+    gap: 2px;
+  }
+
+  .platform-agent-toolbar-actions .ant-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .platform-agent-canvas {
+    padding: 12px;
+  }
+
+  .platform-agent-drawer-root--expanded .platform-agent-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .platform-agent-drawer-root--expanded .platform-agent-conversations-aside {
+    display: none;
+  }
+
+  .platform-agent-resize-handle {
+    display: none;
+  }
+
+  .platform-agent-empty {
+    align-content: start;
+    padding-top: 20px;
+  }
+
+  .platform-agent-welcome .ant-welcome-title,
+  .platform-agent-welcome .ant-x-welcome-title {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-agent-prompts .ant-prompts-item,
+  .platform-agent-prompts .ant-x-prompts-item {
+    transition: none;
+  }
+
+  .platform-agent-prompts .ant-prompts-item:hover,
+  .platform-agent-prompts .ant-x-prompts-item:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.storage/
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
+node_modules/
+dist/
+coverage/
+.rag/
+.local-tools/
+
+# Downloaded annotation demo media and cache artifacts.
+docs/examples/annotation-task-datasets/raw-public-samples/
+docs/examples/annotation-task-datasets/assets/
+docs/examples.rar
+MarkUp-交付文档/markup_demo.mp4

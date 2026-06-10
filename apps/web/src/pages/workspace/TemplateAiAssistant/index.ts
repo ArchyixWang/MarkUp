@@ -1,0 +1,1 @@
+export { TemplateAiAssistant } from './TemplateAiAssistant';

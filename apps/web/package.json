@@ -1,0 +1,55 @@
+{
+  "name": "@markup/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@ant-design/charts": "^2.6.7",
+    "@ant-design/icons": "^6.2.5",
+    "@ant-design/x": "^2.7.0",
+    "@ant-design/x-markdown": "^2.7.0",
+    "@ant-design/x-sdk": "^2.7.0",
+    "@ant-design/x-skill": "^2.7.0",
+    "@gsap/react": "^2.1.2",
+    "@types/qrcode": "^1.5.6",
+    "@types/react-router-dom": "^5.3.3",
+    "antd": "^6.4.3",
+    "exceljs": "^3.4.0",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.16.0",
+    "qrcode": "^1.5.4",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "^7.15.1"
+  },
+  "overrides": {
+    "uuid": "11.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "globals": "latest",
+    "jsdom": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}

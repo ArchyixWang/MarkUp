@@ -1,0 +1,1714 @@
+{
+  "meta": {
+    "title": "MarkUp 帮助中心",
+    "subtitle": "面向标注员、企业 Owner、审核员和企业管理员的 MarkUp 操作手册。",
+    "updated_at": "2026-06-10"
+  },
+  "audiences": [
+    {
+      "id": "labeler",
+      "title": "标注员"
+    },
+    {
+      "id": "owner",
+      "title": "企业 / Owner"
+    },
+    {
+      "id": "reviewer",
+      "title": "审核员"
+    },
+    {
+      "id": "team_admin",
+      "title": "企业管理员"
+    }
+  ],
+  "aliases": {
+    "quickstart": "public-account",
+    "account": "public-account",
+    "labeler-guide": "annotation-workbench",
+    "owner-guide": "task-production",
+    "dataset-template-guide": "datasets",
+    "task-ai-review": "ai-review",
+    "export-audit": "export-audit",
+    "resources": "enterprise-governance",
+    "troubleshooting": "troubleshooting",
+    "faq": "faq"
+  },
+  "groups": [
+    {
+      "id": "orientation",
+      "title": "入口、账号与权限",
+      "module_ids": [
+        "public-account",
+        "roles-permissions"
+      ]
+    },
+    {
+      "id": "labeler-work",
+      "title": "标注员工作",
+      "module_ids": [
+        "task-market",
+        "annotation-workbench",
+        "labeler-growth"
+      ]
+    },
+    {
+      "id": "enterprise-production",
+      "title": "企业数据生产",
+      "module_ids": [
+        "enterprise-dashboard",
+        "datasets",
+        "templates",
+        "task-production",
+        "task-management"
+      ]
+    },
+    {
+      "id": "quality-delivery",
+      "title": "AI、审核与交付",
+      "module_ids": [
+        "ai-review",
+        "manual-review",
+        "export-audit"
+      ]
+    },
+    {
+      "id": "governance-support",
+      "title": "治理、通知与排查",
+      "module_ids": [
+        "enterprise-governance",
+        "notifications-inbox",
+        "troubleshooting",
+        "faq"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "public-account",
+      "title": "公开入口与账号体系",
+      "summary": "从注册、登录、OAuth、onboarding 到个人信箱，说明用户进入 MarkUp 后怎样找到自己的工作入口。",
+      "status": "available",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "注册",
+        "登录",
+        "OAuth",
+        "onboarding",
+        "账号中心",
+        "个人信箱"
+      ],
+      "entries": [
+        {
+          "title": "注册后先完成 onboarding",
+          "body": [
+            "MarkUp 的注册只创建一个通用账号。第一次登录后，如果账号还没有完成初始化，系统会进入 onboarding，让用户选择成为个人标注员、创建企业，或使用企业邀请码加入已有企业。这个选择决定账号后续看到的工作入口，不是临时视图切换。",
+            "账号身份是唯一的。已经完成 onboarding 的账号不会在个人身份和企业身份之间来回切换；如果后续需要加入团队、调整 Owner、Reviewer、Team Admin 或企业内 Labeler 权限，应由企业治理中的成员管理完成。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "入口位置",
+              "text": "从登录页完成账号密码登录、验证码流程或 OAuth 登录后，如果系统提示继续初始化，就按页面引导完成 onboarding。"
+            },
+            {
+              "label": "结果状态",
+              "text": "个人标注员会进入个人标注工作台；创建企业的用户会成为该企业管理员；使用邀请码加入企业的用户会获得企业分配的成员身份和角色。"
+            },
+            {
+              "label": "失败排查",
+              "text": "如果页面提示邀请码无效、邮箱未验证或账号状态不可用，应先处理账号验证和邀请有效性，再重新进入工作台。"
+            }
+          ],
+          "search_keywords": [
+            "onboarding",
+            "注册",
+            "邀请码",
+            "账号身份唯一",
+            "个人标注员",
+            "创建企业"
+          ]
+        },
+        {
+          "title": "使用 OAuth 登录和绑定账号",
+          "body": [
+            "OAuth 用于通过 GitHub、Google 或 Hugging Face 等第三方身份登录。首次使用第三方登录时，系统会要求用户明确选择注册新账号或绑定已有账号，避免因为邮箱相同而自动合并身份。",
+            "在账号中心发起的 OAuth 绑定只会绑定当前登录账号。如果第三方身份已被其他账号占用，或当前账号已经绑定同一 provider 下的另一身份，系统会拒绝本次绑定并保留当前会话。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "绑定前",
+              "text": "确认自己已经登录到要绑定的 MarkUp 账号。"
+            },
+            {
+              "label": "绑定时",
+              "text": "从账号中心选择对应 provider，完成第三方授权后返回 MarkUp。"
+            },
+            {
+              "label": "绑定后",
+              "text": "回到账号中心检查 provider 是否显示为已绑定；之后可以用账号密码或已绑定的第三方身份登录同一账号。"
+            }
+          ],
+          "search_keywords": [
+            "OAuth",
+            "GitHub",
+            "Google",
+            "Hugging Face",
+            "账号绑定"
+          ]
+        },
+        {
+          "title": "账号中心和个人信箱分别处理什么",
+          "body": [
+            "账号中心只处理当前登录人的资料、安全设置、密码、OAuth 绑定和会话管理。企业资料、成员、钱包、资源、公告不在账号中心维护，也不应该和个人资料混在一起。",
+            "个人信箱是工作提醒入口。审核退回、导出完成、权限变化、任务安排变化和异常提醒会进入信箱；普通保存成功、领取成功、提交成功这类即时反馈通常留在业务页面和审计记录中。"
+          ],
+          "search_keywords": [
+            "账号中心",
+            "个人信箱",
+            "通知",
+            "安全设置",
+            "会话"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roles-permissions",
+      "title": "身份、角色与权限",
+      "summary": "解释 Labeler、Owner、Reviewer、Team Admin 在同一条数据生产链路里的分工，以及看不到入口时如何判断权限问题。",
+      "status": "available",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "权限",
+        "角色",
+        "Labeler",
+        "Owner",
+        "Reviewer",
+        "Team Admin"
+      ],
+      "entries": [
+        {
+          "title": "四类公开用户怎样协作",
+          "body": [
+            "一条完整生产链路通常从企业准备数据开始：Owner 导入数据集，搭建并发布模板，配置任务和分发方式；Labeler 领取或接收任务并提交答案；AI 预审给出自动评分、建议和风险提示；Reviewer 在原始样本、标注答案和 AI 意见基础上做人工判断；Team Admin 负责企业成员、预算、资源、审批和治理。",
+            "帮助中心只面向这些公开角色，不承载部署、本地启动、内部 API 调用或系统实现细节。用户遇到权限问题时，应围绕当前账号、企业成员状态和被授予的角色排查。"
+          ],
+          "search_keywords": [
+            "适用角色",
+            "权限边界",
+            "Owner",
+            "Reviewer",
+            "Team Admin",
+            "Labeler"
+          ]
+        },
+        {
+          "title": "看不到入口时怎么判断原因",
+          "body": [
+            "工作台侧边栏会根据当前账号的成员状态和角色显示可用入口。看不到某个页面不表示功能不存在，通常表示当前账号没有该入口所需的企业成员关系、角色权限，或任务不在自己的处理范围内。",
+            "正确做法是确认当前账号是否已经完成 onboarding，是否已加入对应企业，企业成员状态是否 active，是否拥有 Owner、Reviewer 或 Team Admin 等角色；入口变化应来自成员管理和角色授权。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "Labeler",
+              "text": "个人标注员主要看到公开任务、我的任务、积分、资质和信誉；企业内 Labeler 处理企业分配或允许领取的项目任务。"
+            },
+            {
+              "label": "Owner",
+              "text": "Owner 主要维护数据集、模板、任务、AI 预审、审核流和导出结果。"
+            },
+            {
+              "label": "Reviewer",
+              "text": "Reviewer 主要进入审核队列，查看待审核提交、AI 预审意见和历史记录。"
+            },
+            {
+              "label": "Team Admin",
+              "text": "Team Admin 处理成员、角色、钱包、会员、资源、公告、审计和发布审批。"
+            }
+          ],
+          "search_keywords": [
+            "看不到入口",
+            "成员状态",
+            "active",
+            "权限不足",
+            "企业内流转"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task-market",
+      "title": "任务广场",
+      "summary": "教标注员如何筛选公开任务、检查领取条件、领取任务包并进入作答。",
+      "status": "available",
+      "audiences": [
+        "labeler"
+      ],
+      "tags": [
+        "任务广场",
+        "领取任务",
+        "公开任务",
+        "资质检查",
+        "任务协议"
+      ],
+      "entries": [
+        {
+          "title": "在任务广场判断一个任务能不能接",
+          "body": [
+            "任务广场只展示对个人标注员开放、仍在收集中并且未过期的公开任务。进入任务详情后，先看任务说明、样本类型、预计耗时、奖励积分、剩余题量、截止时间、领取包大小、资质要求和任务协议，再决定是否领取。",
+            "企业内部项目不会以自由接单的形式出现在公开任务广场。企业内 Labeler 应从企业项目入口或我的任务中处理分配给自己的工作。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "筛选任务",
+              "text": "按领域、奖励、预计耗时、截止时间或关键词筛选，优先选择自己资质匹配且能在截止时间前完成的任务。"
+            },
+            {
+              "label": "阅读要求",
+              "text": "进入详情页确认作答说明、验收标准和协议内容；需要签署协议的任务，先完成协议确认。"
+            },
+            {
+              "label": "领取任务包",
+              "text": "选择允许的包大小并点击领取。领取成功后，样本会进入我的任务。"
+            }
+          ],
+          "search_keywords": [
+            "任务领取",
+            "公开任务",
+            "任务广场",
+            "包大小",
+            "企业内流转"
+          ]
+        },
+        {
+          "title": "领取失败时按这些条件排查",
+          "body": [
+            "领取失败通常不是单一原因。系统会同时检查账号是否为 Labeler、任务是否仍在收集中、是否未过期、剩余题量是否足够、包大小是否可用、任务是否对当前账号可见，以及资质、历史准确率、完成数量和协议状态是否满足要求。",
+            "如果刚通过资质或刚签署协议，可以刷新任务详情再尝试领取。若任务剩余题量被其他标注员领取完，页面会阻止继续领取。"
+          ],
+          "search_keywords": [
+            "领取失败",
+            "资质检查",
+            "协议",
+            "剩余题量",
+            "资格不足"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "annotation-workbench",
+      "title": "标注作答工作台",
+      "summary": "按真实作答流程讲解草稿、提交、打回，以及 ShowItem、图片 Mask、上传、JSON、LLMComponent 等组件的使用方法。",
+      "status": "available",
+      "audiences": [
+        "labeler"
+      ],
+      "tags": [
+        "标注作答",
+        "Renderer",
+        "草稿",
+        "提交",
+        "ImageMaskAnnotation",
+        "LLMComponent"
+      ],
+      "entries": [
+        {
+          "title": "从我的任务进入作答并提交",
+          "body": [
+            "作答页由任务绑定的已发布模板版本渲染。Labeler 打开题目后，先阅读 ShowItem 展示的原始数据、上下文和媒体，再填写进入答案的组件。保存草稿只保存当前进度，不会进入审核；正式提交会触发模板校验、AI 预审和人工审核。",
+            "如果题目被打回，作答页会显示审核意见和原答案。标注员应根据意见修改答案后再次提交，直到审核通过或任务状态不再允许继续处理。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "阅读题目",
+              "text": "先看标题、说明、ShowItem、图片、音频、视频、附件和派生上下文，确认自己理解样本。"
+            },
+            {
+              "label": "填写答案",
+              "text": "按组件要求填写文本、选择、评分、排序、上传、JSON 或图片 Mask。必填项为空时不能提交。"
+            },
+            {
+              "label": "保存草稿",
+              "text": "中途离开前保存草稿，之后从我的任务继续作答。草稿不会被 Reviewer 审核。"
+            },
+            {
+              "label": "正式提交",
+              "text": "提交前检查所有必填项和媒体标注。提交成功后等待 AI 预审和人工审核。"
+            }
+          ],
+          "search_keywords": [
+            "草稿",
+            "提交答案",
+            "打回",
+            "重新提交",
+            "运行时校验"
+          ]
+        },
+        {
+          "title": "阅读 ShowItem 展示的原始数据",
+          "body": [
+            "ShowItem 是只读展示组件，用来把 Owner 绑定的数据列、媒体、附件或派生上下文展示给标注员。它不进入提交答案，但决定标注员判断时能看到哪些材料。",
+            "一个 ShowItem 可以展示多个字段，例如标题、正文、图片、音频、视频、文件链接和 AI 上下文摘要。遇到展示为空时，先看题目是否确实缺少该字段；如果媒体打不开，再按文件预览失败的排查方法处理。"
+          ],
+          "search_keywords": [
+            "ShowItem",
+            "展示字段",
+            "多模态",
+            "媒体预览",
+            "原始数据"
+          ]
+        },
+        {
+          "title": "填写文本、选择、评分和排序组件",
+          "body": [
+            "TextInput 适合短答案，TextArea 适合长理由，RichEditor 适合需要分段、列表或格式的说明。提交前应检查空格、复制内容和字数限制，避免因为看似有内容但实际为空而校验失败。",
+            "SingleSelect 只能选一个选项，MultiSelect 可以选多个，TagSelect 用于标签化答案并可能允许自定义标签。Scale 按最小值、最大值、步长和端点含义评分；Ranking 用来把候选项按优先级排序，提交的是有序列表。"
+          ],
+          "search_keywords": [
+            "TextInput",
+            "TextArea",
+            "RichEditor",
+            "SingleSelect",
+            "MultiSelect",
+            "TagSelect",
+            "Scale",
+            "Ranking"
+          ]
+        },
+        {
+          "title": "上传文件、图片、音频和视频答案",
+          "body": [
+            "FileUpload、ImageUpload、AudioUpload 和 VideoUpload 用于把标注员补充的材料作为答案提交。上传前确认文件类型、大小和网络状态；上传后要等待页面显示完成，再保存草稿或提交。",
+            "如果上传后发现文件选错，可以先删除或替换再提交。受保护的企业文件需要当前账号有对应团队权限；如果预览失败但上传成功，应记录题目、文件名和页面提示，交给 Owner 或 Team Admin 排查存储权限。"
+          ],
+          "search_keywords": [
+            "FileUpload",
+            "ImageUpload",
+            "AudioUpload",
+            "VideoUpload",
+            "文件上传",
+            "预览失败"
+          ]
+        },
+        {
+          "title": "使用图片 Mask 标注组件",
+          "body": [
+            "ImageMaskAnnotation 用于在图片上标出目标区域。模板会指定图片来源字段；如果没有显式指定，系统会尝试使用当前样本中的行级图片媒体。标注员看到底图后，应先确认图片加载完整，再开始勾画。",
+            "矩形模式适合框出目标区域；涂抹模式适合更细的 mask。操作时先选择或确认类别，再在图片上拖拽绘制；需要修正时使用擦除、撤销或删除标注。提交前应检查标注数量、位置、类别和漏标区域，因为空 mask 或未绑定图片来源会导致提交质量问题。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "确认底图",
+              "text": "如果页面显示正在加载图片素材，等待加载完成；如果图片为空，检查题目是否有 image_url、行级 media，或受保护图片是否有访问权限。"
+            },
+            {
+              "label": "绘制区域",
+              "text": "在图片上按住拖拽生成矩形，或按模板配置使用画笔涂抹 mask。必要时放大、平移后处理细节。"
+            },
+            {
+              "label": "修正结果",
+              "text": "发现框错、涂多或漏标时，使用撤销、擦除或删除后重新绘制。"
+            },
+            {
+              "label": "提交前检查",
+              "text": "确认每个目标区域都有标注，类别和说明正确，标注数量符合任务要求。"
+            }
+          ],
+          "search_keywords": [
+            "ImageMaskAnnotation",
+            "图片 Mask",
+            "mask",
+            "矩形",
+            "涂抹",
+            "source_field",
+            "image_url"
+          ]
+        },
+        {
+          "title": "使用 JSON 编辑器和 LLMComponent",
+          "body": [
+            "JsonEditor 用于提交结构化答案。填写时必须保持合法 JSON，例如对象要用大括号、字符串要用双引号、数组要用中括号。校验失败时，不要只看业务内容，先修复逗号、引号、括号和字段类型。",
+            "LLMComponent 是 AI 辅助入口，不直接作为答案字段提交。点击生成后，AI 会结合当前题目内容、ShowItem 和已填写答案给出建议；标注员需要阅读、判断并手动采纳或改写，不能把 AI 输出当作自动通过的最终答案。"
+          ],
+          "search_keywords": [
+            "JsonEditor",
+            "JSON",
+            "LLMComponent",
+            "AI 辅助",
+            "生成建议"
+          ]
+        },
+        {
+          "title": "理解分组容器",
+          "body": [
+            "GroupContainer 用来把相关展示项、答案字段和提示组织在同一个分区里。它本身不进入答案，但组内组件仍会按自己的 required、选项、校验和联动规则参与提交。",
+            "当一个题目包含多个材料或多段判断时，先按分组阅读，再在每个分组内完成对应答案。不要因为容器本身不是答案字段，就忽略其中的必填组件。"
+          ],
+          "search_keywords": [
+            "GroupContainer",
+            "分组容器",
+            "必填",
+            "联动规则"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "labeler-growth",
+      "title": "资质、积分与信誉",
+      "summary": "说明标注员如何维护资质、查看积分收益、处理提现和理解信誉分对任务领取的影响。",
+      "status": "available",
+      "audiences": [
+        "labeler"
+      ],
+      "tags": [
+        "资质",
+        "积分",
+        "信誉",
+        "提现",
+        "申诉"
+      ],
+      "entries": [
+        {
+          "title": "资质怎样影响任务领取",
+          "body": [
+            "任务可以设置领域资质、历史通过率、完成数量和协议要求。标注员应在个人工作台维护资料、完成资质认证，并通过高质量提交积累可信记录。资质或信誉不足时，任务广场可能仍能看到任务详情，但领取会失败。",
+            "审核退回、超时、明显低质量提交会影响信誉和后续任务推荐；审核通过和稳定完成会增加可领取任务范围。"
+          ],
+          "search_keywords": [
+            "资质",
+            "信誉分",
+            "历史准确率",
+            "任务领取"
+          ]
+        },
+        {
+          "title": "查看积分收益和提现",
+          "body": [
+            "通过审核的公开积分任务会进入积分收益记录。标注员应在积分页查看任务来源、结算状态、可提现余额和提现记录；仍在审核中的提交不会立即变成可提现积分。",
+            "提现失败时，先检查余额是否可用、支付信息是否完整、是否存在风控或审核中的结算记录，再根据页面提示处理。"
+          ],
+          "search_keywords": [
+            "积分",
+            "可提现余额",
+            "提现",
+            "结算"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-dashboard",
+      "title": "企业工作台与 Dashboard",
+      "summary": "帮助企业用户从 Dashboard 进入数据、模板、任务、审核、导出、成员和资源页面。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "企业工作台",
+        "Dashboard",
+        "入口",
+        "概览"
+      ],
+      "entries": [
+        {
+          "title": "用 Dashboard 判断下一步工作",
+          "body": [
+            "企业 Dashboard 用来汇总当前企业的数据生产状态。Owner 通常从这里进入数据集、模板、任务和导出；Reviewer 从这里进入待审核队列；Team Admin 从这里查看成员、资源、钱包、审批和公告。",
+            "如果 Dashboard 显示某个环节存在异常，例如任务待审批、资源不足、审核积压或导出失败，应点击对应入口进入详情页处理，而不是在概览页反复刷新。"
+          ],
+          "search_keywords": [
+            "Dashboard",
+            "企业工作台",
+            "任务待审批",
+            "审核积压",
+            "资源不足"
+          ]
+        },
+        {
+          "title": "企业内 Labeler 的工作入口",
+          "body": [
+            "企业内 Labeler 处理的是所属企业分配、流转或允许领取的项目任务。它和公开任务广场不同，不强调公开积分、自由接单和公开资质门槛，而强调企业项目上下文、任务分配和内部质量要求。",
+            "如果企业内 Labeler 看不到项目，应先确认成员状态是否 active、是否被分配到任务，或该任务是否允许企业内成员领取。"
+          ],
+          "search_keywords": [
+            "企业内 Labeler",
+            "企业内流转",
+            "项目任务",
+            "分配任务"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "datasets",
+      "title": "数据集管理",
+      "summary": "用操作流程讲清楚普通表格、多模态数据、Manifest JSONL、补上传、字段编辑、ShowItem 映射候选和 AI 上下文的关系。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "数据集",
+        "导入",
+        "CSV",
+        "Excel",
+        "Manifest JSONL",
+        "多模态",
+        "补上传",
+        "media_schema",
+        "context_schema"
+      ],
+      "entries": [
+        {
+          "title": "导入普通文本或表格数据",
+          "body": [
+            "普通文本数据最适合用 CSV 或 Excel 导入。每一行会成为一个样本，每一列会成为可用于展示、筛选、AI 上下文或导出的字段。导入前建议准备稳定的主键列，例如 row_id、external_id 或 sample_id，后续补上传和排查都依赖它。",
+            "列名应使用清晰、稳定、没有重复含义的字段名。标题、正文、分类、来源、备注等文本列可以直接成为 ShowItem 的候选来源；不希望进入模板映射的列，可以在数据集编辑中调整用途。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "准备文件",
+              "text": "确认第一行是列名，每行是一条样本，主键列不为空，文本内容没有被错误分列。"
+            },
+            {
+              "label": "进入入口",
+              "text": "在企业工作台进入数据集管理，点击导入数据集。"
+            },
+            {
+              "label": "上传解析",
+              "text": "选择 CSV、Excel、JSON 或 JSONL 文件，填写名称和说明，点击导入并解析。"
+            },
+            {
+              "label": "检查结果",
+              "text": "导入后查看行数、字段列表、预览行和处理摘要，确认字段类型与样本数量符合预期。"
+            }
+          ],
+          "search_keywords": [
+            "CSV",
+            "Excel",
+            "普通文本",
+            "row_id",
+            "external_id",
+            "sample_id",
+            "导入数据集"
+          ]
+        },
+        {
+          "title": "导入表格中带媒体 URL 的多模态数据",
+          "body": [
+            "多模态数据可以先放在表格里：文本列保存题干和上下文，媒体列保存图片、音频、视频或文件 URL。常见列名可以是 image_url、audio_url、video_url、attachment_url，也可以使用业务字段名，只要后续在 ShowItem 或 Mask 组件中正确绑定。",
+            "导入后，系统会根据字段值和媒体类型识别 row-level media，并形成 media_schema。media_schema 是模板搭建和任务发布时选择图片、音频、视频来源的重要依据；如果媒体列没有被识别，应检查 URL 是否完整、后缀或类型是否明确。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "表格结构",
+              "text": "一行样本内同时保留文本字段和媒体 URL 字段，例如 title、content、image_url、audio_url。"
+            },
+            {
+              "label": "导入检查",
+              "text": "导入完成后打开样本预览，确认媒体能预览，media_schema 中出现对应 field、type 和 role。"
+            },
+            {
+              "label": "模板关联",
+              "text": "在模板 ShowItem 中选择媒体字段；图片 Mask 组件使用 source_field、source_binding 或行级图片媒体作为底图来源。"
+            }
+          ],
+          "search_keywords": [
+            "多模态",
+            "媒体 URL",
+            "image_url",
+            "audio_url",
+            "video_url",
+            "media_schema",
+            "ShowItem 映射"
+          ]
+        },
+        {
+          "title": "使用 Manifest JSONL 描述复杂多模态样本",
+          "body": [
+            "Manifest JSONL 适合图片、音频、视频、附件和派生上下文混合的数据。文件每一行是一条 JSON，建议包含 data、media、attachments、derived_context 或 context 字段。data 保存普通字段，media 逐项声明媒体类型、URL、字段名和角色，derived_context 保存需要进入 AI 或审核上下文的结构化信息。",
+            "导入 Manifest JSONL 后，MarkUp 会把普通字段生成 columns，把媒体声明生成 media_schema，把上下文声明生成 context_schema。后续模板搭建时，ShowItem 可以绑定普通列、媒体、附件或派生上下文；任务发布时，AI 和 Reviewer 会基于这些 schema 读取可用上下文。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "最小示例",
+              "text": "每行可写成 {\"external_id\":\"case-001\",\"data\":{\"title\":\"样本标题\"},\"media\":[{\"type\":\"image\",\"field\":\"image_url\",\"url\":\"https://example.com/a.png\",\"role\":\"primary\"}],\"derived_context\":{\"scene\":\"室外\"}}。"
+            },
+            {
+              "label": "导入入口",
+              "text": "在导入数据集弹窗中选择 JSONL 文件；如果还有少量本地媒体，可同时放入追加图片/音频/视频素材。"
+            },
+            {
+              "label": "检查 schema",
+              "text": "导入后查看 media_schema、context_schema、未绑定素材数量和预览行，确认每条媒体都能回到具体样本。"
+            }
+          ],
+          "search_keywords": [
+            "Manifest JSONL",
+            "JSONL",
+            "media",
+            "attachments",
+            "derived_context",
+            "context_schema",
+            "AI 上下文"
+          ]
+        },
+        {
+          "title": "本地媒体素材怎样和表格行关联",
+          "body": [
+            "如果表格只有文本和主键，本地图片、音频或视频可以作为追加素材上传。为了让素材进入具体样本，表格中应保留能和文件匹配的字段，例如 image_file、asset_name、external_id，或在 Manifest 中逐行声明媒体。单独上传但无法匹配到样本的素材会作为未绑定素材保留，不会默认进入 AI 或 Reviewer 上下文。",
+            "多模态任务发布前，Owner 应打开数据集详情检查未绑定素材。如果未绑定数量大于 0，要确认这些素材只是数据集级补充资料，还是本来应该进入某些样本；后者需要通过补上传或重新导入修正关联。"
+          ],
+          "search_keywords": [
+            "本地媒体",
+            "追加素材",
+            "未绑定素材",
+            "media_assets",
+            "表格关联"
+          ]
+        },
+        {
+          "title": "补上传并按主值合并",
+          "body": [
+            "补上传用于在不删除原有数据的前提下更新字段、补充媒体或追加新样本。它会按主值字段对齐：命中的行更新字段和媒体，未命中的行追加到数据集。常用主值字段是 row_id、external_id 或 sample_id。",
+            "补上传前必须确认当前数据集和补充文件都包含同一个主值字段。多模态补上传推荐继续使用 Manifest JSONL，这样媒体、附件和上下文能逐行声明，避免上传后成为未绑定素材。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "选择数据集",
+              "text": "进入数据集详情，点击补上传并按主值合并。"
+            },
+            {
+              "label": "选择主值字段",
+              "text": "选择两个文件都存在且唯一稳定的字段，例如 external_id。"
+            },
+            {
+              "label": "上传补充文件",
+              "text": "上传 CSV、Excel、JSON、JSONL 或 Manifest JSONL，并可附加少量媒体文件或外部素材 URL。"
+            },
+            {
+              "label": "查看合并摘要",
+              "text": "完成后检查命中行、追加行、媒体绑定数量和未绑定素材数量。"
+            }
+          ],
+          "search_keywords": [
+            "补上传",
+            "主值字段",
+            "external_id",
+            "按主值合并",
+            "追加行"
+          ]
+        },
+        {
+          "title": "编辑字段、派生变量和锁定规则",
+          "body": [
+            "数据集导入后可以维护字段用途、备注、派生变量和展示候选。派生变量适合把原始列加工成更稳定的展示字段，例如把标题和来源合并成 display_title，或把多个媒体说明整理成审核摘要。",
+            "如果数据集已经被待审核、收集中、暂停或结束的任务引用，系统会限制改写或删除源数据。这是为了保证标注回放、AI 上下文、Reviewer 上下文和导出结果可解释。需要修改时，应新建数据集或确认任务链路已经处理完毕。"
+          ],
+          "search_keywords": [
+            "派生变量",
+            "字段编辑",
+            "源数据锁定",
+            "ShowItem 可映射来源"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "templates",
+      "title": "模板搭建",
+      "summary": "教 Owner 从数据字段出发搭建 Designer 模板、配置组件、预览 Renderer、发布版本并为任务发布准备映射。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "模板",
+        "Designer",
+        "Renderer",
+        "ShowItem",
+        "ImageMaskAnnotation",
+        "版本"
+      ],
+      "entries": [
+        {
+          "title": "从数据字段开始设计模板",
+          "body": [
+            "模板不是单独的表单，它要服务于某个数据集和任务目标。搭建前先确定 Labeler 需要看到哪些字段、需要提交哪些答案、Reviewer 如何判断质量、AI 是否需要读取上下文。然后在 Designer 中用 ShowItem 放原始材料，用答案组件收集标注结果。",
+            "推荐先选一个样本做预览：确认 ShowItem 能看到标题、正文、媒体和上下文，再添加答案组件。这样可以避免模板发布后才发现字段绑定缺失。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "创建模板",
+              "text": "进入模板搭建，点击新建模板，填写名称、任务类型和说明。"
+            },
+            {
+              "label": "放展示组件",
+              "text": "添加 ShowItem，把数据列、媒体、附件或派生上下文作为 Labeler 可见材料。"
+            },
+            {
+              "label": "放答案组件",
+              "text": "根据任务目标添加文本、选择、评分、排序、上传、JSON 或图片 Mask 组件。"
+            },
+            {
+              "label": "预览 Renderer",
+              "text": "使用真实样本预览作答页，检查必填、选项、默认值、布局和媒体加载。"
+            },
+            {
+              "label": "发布版本",
+              "text": "确认无误后发布模板版本。任务会绑定已发布版本，后续修改应生成新草稿和新版本。"
+            }
+          ],
+          "search_keywords": [
+            "Designer",
+            "Renderer",
+            "模板发布",
+            "草稿",
+            "版本"
+          ]
+        },
+        {
+          "title": "配置 ShowItem 和多模态映射",
+          "body": [
+            "ShowItem 可以一次展示多个字段，适合把文本、图片、音频、视频、附件和派生上下文组合成题目材料。配置时可以先在模板中写好展示意图，再在任务发布时把 ShowItem 映射到具体数据集字段。",
+            "多模态 ShowItem 的关键是来源要清楚：普通列来自 columns，图片音频视频来自 media_schema，附件来自 attachments，AI 或审核上下文来自 context_schema。发布任务时如果 ShowItem 映射未完成，readiness 会提示补齐。"
+          ],
+          "search_keywords": [
+            "ShowItem",
+            "多模态 ShowItem",
+            "字段映射",
+            "media_schema",
+            "context_schema",
+            "readiness"
+          ]
+        },
+        {
+          "title": "选择合适的答案组件",
+          "body": [
+            "短文本用 TextInput，长理由用 TextArea，需要格式的说明用 RichEditor。枚举判断用 SingleSelect，多标签结论用 MultiSelect 或 TagSelect。需要打分时用 Scale，需要给候选排序时用 Ranking。",
+            "需要标注员补充材料时使用 FileUpload、ImageUpload、AudioUpload 或 VideoUpload。需要结构化答案时使用 JsonEditor。需要在图片上框选或涂抹目标时使用 ImageMaskAnnotation。需要 AI 在作答页提供建议时使用 LLMComponent，但它不进入最终答案字段。"
+          ],
+          "search_keywords": [
+            "TextInput",
+            "TextArea",
+            "RichEditor",
+            "SingleSelect",
+            "MultiSelect",
+            "TagSelect",
+            "FileUpload",
+            "ImageUpload",
+            "AudioUpload",
+            "VideoUpload",
+            "JsonEditor"
+          ]
+        },
+        {
+          "title": "搭建图片 Mask 标注模板",
+          "body": [
+            "图片 Mask 标注需要同时准备底图来源和答案字段。底图通常来自数据集中的 image_url、media_schema 中的 image 类型媒体，或 Manifest 中声明的 primary image。答案字段保存标注结果，例如矩形、mask 点位、类别和描述。",
+            "在 Designer 中添加 ImageMaskAnnotation 后，应配置 source_field 或 source_binding、标注模式、画笔大小、颜色、透明度和说明。预览时必须确认底图能加载，标注后能显示标注数量；如果底图为空，先回到数据集检查图片字段和媒体绑定。"
+          ],
+          "search_keywords": [
+            "ImageMaskAnnotation",
+            "图片 Mask 标注",
+            "source_field",
+            "source_binding",
+            "画笔",
+            "矩形"
+          ]
+        },
+        {
+          "title": "使用 LLMComponent 和分组容器",
+          "body": [
+            "LLMComponent 用于在作答页启用 AI 辅助入口。它会读取当前题目内容、ShowItem 和已填写答案字段作为上下文，输出建议供 Labeler 参考。发布前要确认企业 AI Provider 和相关资源可用，否则 AI 辅助可能无法生成。",
+            "GroupContainer 用于组织复杂页面。它不进入答案，但可以把一组展示材料、多个答案字段和提示说明放在同一分区。复杂多页签模板应使用分组和清晰标题降低作答成本。"
+          ],
+          "search_keywords": [
+            "LLMComponent",
+            "AI 辅助",
+            "GroupContainer",
+            "分组容器",
+            "Provider"
+          ]
+        },
+        {
+          "title": "导入模板 schema 和版本管理",
+          "body": [
+            "已有模板 schema 可以通过导入模板 schema 进入 Designer。导入后系统会检查 schema_version、tabs、components、组件 ID 和答案字段唯一性。导入成功不等于已发布，仍需要预览、校验并发布版本。",
+            "已发布模板版本会被任务绑定为快照。发布后如果需要改题目、字段或校验规则，应基于模板创建新的草稿版本，再发布新版本；历史任务继续使用旧版本，保证历史提交可回放。"
+          ],
+          "search_keywords": [
+            "导入模板 schema",
+            "schema_version",
+            "模板版本",
+            "发布版本",
+            "历史回放"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task-production",
+      "title": "任务发布与分发",
+      "summary": "教 Owner 从数据集和模板创建任务、配置分发、通过 readiness 检查，并理解 Owner 发布待审和 Team Admin 审批。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "任务发布",
+        "分发",
+        "readiness",
+        "发布审批",
+        "企业内流转"
+      ],
+      "entries": [
+        {
+          "title": "发布任务前先准备三件事",
+          "body": [
+            "任务发布需要已导入的数据集、已发布的模板版本，以及足够的企业预算和资源。Owner 应先确认数据集样本可预览、模板 Renderer 可正常作答、ShowItem 映射候选完整，再进入发布页。",
+            "如果任务包含图片 Mask、AI 辅助或 AI 预审，还要确认数据集里有可用图片媒体，模板里的 ImageMaskAnnotation 能取到底图，企业 AI Provider、AI 钱包和模型资源可用。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "选择数据集",
+              "text": "确认数据集没有导入失败、未绑定关键媒体或缺失主键。"
+            },
+            {
+              "label": "选择模板版本",
+              "text": "只能选择已发布版本。仍是草稿的模板不能用于正式任务。"
+            },
+            {
+              "label": "确认资源",
+              "text": "检查企业积分钱包、会员额度、存储容量、AI Provider 和 AI 钱包。"
+            }
+          ],
+          "search_keywords": [
+            "任务发布",
+            "数据集",
+            "模板版本",
+            "AI 钱包",
+            "Provider"
+          ]
+        },
+        {
+          "title": "配置公开任务和企业内流转",
+          "body": [
+            "公开任务面向个人标注员，需要配置奖励积分、领取包大小、截止时间、资质门槛、任务协议和公开可见范围。发布后，符合条件的个人标注员可以在任务广场领取。",
+            "企业内流转用于企业项目，强调内部成员分配、任务比例和项目进度。它不走公开自由接单逻辑，也不会把任务作为公开积分任务推荐给企业内 Labeler。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "公开任务",
+              "text": "设置奖励、领取规则、资质、协议和截止时间，确保企业积分钱包足以覆盖预扣。"
+            },
+            {
+              "label": "企业内流转",
+              "text": "选择可参与的企业内 active Labeler，配置分配比例或领取范围。"
+            },
+            {
+              "label": "审核配置",
+              "text": "指定 Reviewer、审核规则、是否启用 AI 预审和评分矩阵。"
+            }
+          ],
+          "search_keywords": [
+            "公开任务",
+            "企业内流转",
+            "Labeler 分配",
+            "领取包大小",
+            "任务协议"
+          ]
+        },
+        {
+          "title": "补齐 ShowItem 映射和 readiness 检查",
+          "body": [
+            "发布页会根据模板中的 ShowItem 和数据集字段生成映射区域。Owner 要把每个 ShowItem 绑定到对应的普通列、媒体、附件或派生上下文。映射完成后，Labeler 作答页、AI 预审和 Reviewer 回放才会看到一致的材料。",
+            "readiness 会在发布前检查模板版本、数据集样本、题目生成、ShowItem 映射、Reviewer、AI Provider、评分矩阵、任务协议、企业预算、会员额度、存储容量等条件。任何阻断项未解决，任务都不能进入收集。"
+          ],
+          "search_keywords": [
+            "ShowItem 映射",
+            "readiness",
+            "发布失败",
+            "题目生成",
+            "评分矩阵"
+          ]
+        },
+        {
+          "title": "Owner 发布待审和 Team Admin 审批",
+          "body": [
+            "Owner 发起发布后，任务通常进入待审核状态。此时任务还没有正式进入收集，Team Admin 需要检查预算、资源、分发范围、合规说明、审核配置和质量要求。审批通过后任务进入收集中；驳回后 Owner 应根据驳回原因修改配置后重新提交。",
+            "Team Admin 自己创建并发布的任务可以按企业配置直接进入发布流程，但仍应以 readiness 结果为准。审批记录会进入审计，便于追踪谁在什么时候批准了哪些任务设置。"
+          ],
+          "search_keywords": [
+            "pending_review",
+            "发布待审",
+            "Team Admin 审批",
+            "驳回",
+            "收集中"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task-management",
+      "title": "任务管理与进度跟踪",
+      "summary": "说明 Owner 和 Team Admin 如何查看任务进度、处理暂停恢复、定位异常样本和跟踪分发效果。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "任务管理",
+        "进度",
+        "暂停",
+        "恢复",
+        "异常样本"
+      ],
+      "entries": [
+        {
+          "title": "阅读任务进度面板",
+          "body": [
+            "任务进度应同时看领取数、提交数、待审核数、通过数、退回数、剩余题量、超时数量和通过率。单看提交数容易误判，因为大量提交仍可能停留在审核或被退回。",
+            "公开任务还要关注任务广场曝光、领取包消耗和积分预算；企业内流转任务要关注成员分配比例、每个 Labeler 的处理进度和内部审核积压。"
+          ],
+          "search_keywords": [
+            "任务进度",
+            "领取数",
+            "提交数",
+            "通过率",
+            "退回"
+          ]
+        },
+        {
+          "title": "暂停、恢复和结束任务",
+          "body": [
+            "暂停用于临时阻止继续领取或提交，适合发现模板配置、数据质量或预算异常时使用。恢复前应先解决异常，确认新提交不会继续产生错误。结束任务用于停止收集并进入收尾、审核、导出阶段。",
+            "任务状态变化会影响 Labeler 作答、数据集锁定、预算占用和导出范围。操作前应先确认是否还有未提交草稿、待审核提交或仍需处理的打回样本。"
+          ],
+          "search_keywords": [
+            "暂停任务",
+            "恢复任务",
+            "结束任务",
+            "状态"
+          ]
+        },
+        {
+          "title": "定位异常样本和异常提交",
+          "body": [
+            "当某个样本频繁退回、AI 预审失败或媒体打不开时，应从任务详情进入样本或提交记录，查看原始数据、ShowItem 映射、标注答案、AI 结果、Reviewer 意见和审计日志。",
+            "如果异常来自源数据，例如图片 URL 失效或媒体未绑定，应回到数据集处理；如果来自模板，例如必填字段或 Mask 来源错误，应发布新模板版本并谨慎处理已生成任务。"
+          ],
+          "search_keywords": [
+            "异常样本",
+            "异常提交",
+            "审计日志",
+            "媒体打不开"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-review",
+      "title": "AI 辅助与 AI 预审",
+      "summary": "说明企业如何配置 AI Provider、LLMComponent、AI worker 和 AI 预审，并让人工审核理解 AI 结果。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "reviewer",
+        "team_admin",
+        "labeler"
+      ],
+      "tags": [
+        "AI",
+        "Provider",
+        "LLMComponent",
+        "AI 预审",
+        "AI worker"
+      ],
+      "entries": [
+        {
+          "title": "配置 AI Provider 和可用资源",
+          "body": [
+            "企业可以维护自己的 Provider，也可以使用平台共享 Provider。Team Admin 或具备权限的成员应先配置 provider 类型、模型、连接信息和启用状态，再通过测试连接确认可用。使用平台共享 Provider 时，AI 钱包余额会影响实际调用。",
+            "AI 调用失败时，先看 Provider 是否启用、模型是否可访问、AI 钱包或企业资源是否足够，再看具体任务是否启用了 AI 预审或 LLMComponent。"
+          ],
+          "search_keywords": [
+            "Provider",
+            "模型",
+            "AI 钱包",
+            "测试连接",
+            "AI 资源"
+          ]
+        },
+        {
+          "title": "在模板中使用 LLMComponent 辅助作答",
+          "body": [
+            "LLMComponent 放在模板中后，Labeler 作答页会出现 AI 辅助入口。它读取当前题目内容、ShowItem 和已填写答案，生成建议、解释或字段依据。组件本身不进入答案字段，也不会绕过标注员确认。",
+            "Owner 配置 LLMComponent 时，应写清楚按钮文案、提示意图和适用场景。适合让 AI 给出初步分类建议、摘要、风险提示或检查清单，不适合把最终答案完全交给模型自动提交。"
+          ],
+          "search_keywords": [
+            "LLMComponent",
+            "AI 辅助",
+            "作答建议",
+            "ShowItem"
+          ]
+        },
+        {
+          "title": "启用任务级 AI 预审",
+          "body": [
+            "AI 预审在 Labeler 提交后运行，用来给 Reviewer 提供评分、通过建议、退回建议、风险提示或字段级解释。它依赖任务发布时确认的模板 schema、ShowItem 映射、答案字段语义、评分矩阵和 Provider。",
+            "AI 预审结果不是最终审核结论。它可以帮助 Reviewer 排序和判断，但通过、退回、修改意见仍由人工审核决定。"
+          ],
+          "listType": "ordered",
+          "items": [
+            {
+              "label": "发布前",
+              "text": "在任务发布页启用 AI 预审，选择 Provider，确认评分矩阵和答案字段语义。"
+            },
+            {
+              "label": "提交后",
+              "text": "AI worker 根据任务配置处理新提交，生成预审结果。"
+            },
+            {
+              "label": "审核时",
+              "text": "Reviewer 在审核页查看 AI 分数、建议和风险说明，再做人工决定。"
+            }
+          ],
+          "search_keywords": [
+            "AI 预审",
+            "AI worker",
+            "评分矩阵",
+            "Reviewer",
+            "人工终审"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manual-review",
+      "title": "人工审核",
+      "summary": "教 Reviewer 如何进入审核队列、查看原始样本和 AI 意见、通过或退回提交，并让 Labeler 重新处理。",
+      "status": "available",
+      "audiences": [
+        "reviewer",
+        "owner",
+        "team_admin",
+        "labeler"
+      ],
+      "tags": [
+        "人工审核",
+        "Reviewer",
+        "通过",
+        "退回",
+        "复审"
+      ],
+      "entries": [
+        {
+          "title": "处理审核队列",
+          "body": [
+            "Reviewer 进入审核队列后，应先按任务、状态、风险或分配范围筛选待审核提交。打开提交详情时，页面会展示原始样本、ShowItem 回放、Labeler 答案、上传材料、图片 Mask、AI 预审意见和历史记录。",
+            "审核时不要只看答案字段。多模态任务必须回看媒体和 ShowItem；图片 Mask 任务要检查底图、标注区域、类别和漏标；JSON 任务要检查结构和业务含义。"
+          ],
+          "search_keywords": [
+            "审核队列",
+            "ShowItem 回放",
+            "图片 Mask",
+            "AI 预审",
+            "Reviewer"
+          ]
+        },
+        {
+          "title": "通过、退回和写审核意见",
+          "body": [
+            "审核通过表示该提交可以进入正式结果和后续导出。退回表示 Labeler 需要根据意见修改后重新提交。Reviewer 写退回意见时应说明具体字段、问题原因和修改方向，避免只写“错误”或“重做”。",
+            "如果 AI 预审和人工判断不一致，以人工审核为准。Owner 和 Team Admin 可以从任务管理和审核统计中查看退回率、通过率和异常任务。"
+          ],
+          "search_keywords": [
+            "通过",
+            "退回",
+            "审核意见",
+            "重新提交",
+            "人工审核"
+          ]
+        },
+        {
+          "title": "Reviewer 看不到提交时怎么排查",
+          "body": [
+            "Reviewer 默认只能看到分配给自己的审核范围。看不到某些提交时，先确认任务是否已经产生提交，提交是否进入人工审核阶段，当前账号是否是该任务的 Reviewer，以及分配规则是否包含自己。",
+            "如果需要查看全量提交，应由 Owner 或 Team Admin 调整审核分配，或使用具备相应权限的任务管理入口。"
+          ],
+          "search_keywords": [
+            "看不到提交",
+            "assigned_only",
+            "审核分配",
+            "Reviewer 权限"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "export-audit",
+      "title": "导出、文件与审计",
+      "summary": "说明如何导出通过审核的数据、查看导出历史、处理文件预览问题，并追踪关键审计记录。",
+      "status": "available",
+      "audiences": [
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "导出",
+        "审计",
+        "文件",
+        "下载",
+        "历史"
+      ],
+      "entries": [
+        {
+          "title": "导出正式结果",
+          "body": [
+            "导出应基于通过人工审核的结果。Owner 或具备权限的成员进入导出页面，选择任务、导出范围、字段、格式和文件命名方式，然后提交导出任务。导出完成后，可以在导出历史中下载文件。",
+            "如果导出为空，先检查是否选择了正确任务和范围，是否有通过审核的提交，字段配置是否和模板答案字段一致。"
+          ],
+          "search_keywords": [
+            "导出",
+            "导出历史",
+            "下载",
+            "通过审核",
+            "字段"
+          ]
+        },
+        {
+          "title": "处理文件预览和下载失败",
+          "body": [
+            "图片、音频、视频或附件无法预览时，先确认文件引用仍有效、文件仍在存储中、当前账号有企业数据权限，受保护文件能通过登录会话访问。视频还要确认是否有可播放预览。",
+            "下载失败时，检查导出任务是否完成、文件是否过期、当前账号是否仍有导出权限。需要反馈时，提供页面、任务、文件名、时间和 request_id。"
+          ],
+          "search_keywords": [
+            "文件预览",
+            "下载失败",
+            "受保护文件",
+            "request_id"
+          ]
+        },
+        {
+          "title": "用审计记录追踪关键操作",
+          "body": [
+            "审计记录用于回答谁在什么时候做了什么。数据导入、补上传、模板发布、任务发布审批、暂停恢复、审核通过或退回、导出下载、成员和资源变化都应留下可追踪记录。",
+            "排查问题时，先定位业务对象，再按时间线查看审计记录。request_id 可以帮助把页面错误和后端请求对应起来。"
+          ],
+          "search_keywords": [
+            "审计",
+            "操作记录",
+            "request_id",
+            "时间线"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-governance",
+      "title": "企业治理、成员、钱包与资源",
+      "summary": "教 Team Admin 管理成员角色、企业积分钱包、AI 钱包、会员额度、资源配置和企业公告。",
+      "status": "available",
+      "audiences": [
+        "team_admin",
+        "owner"
+      ],
+      "tags": [
+        "企业治理",
+        "成员",
+        "钱包",
+        "AI 钱包",
+        "会员",
+        "资源",
+        "Provider"
+      ],
+      "entries": [
+        {
+          "title": "管理成员和角色",
+          "body": [
+            "Team Admin 负责邀请成员、启用或禁用成员、分配 Owner、Reviewer、Labeler 等角色，并维护企业内任务协作范围。成员状态为 active 后，相关入口才会在工作台中出现。",
+            "系统 Agent 是随企业存在的系统成员，用于资源治理、AI 预审和审计展示，不是人工登录角色，也不应作为人工通知收件人处理。"
+          ],
+          "search_keywords": [
+            "成员管理",
+            "角色",
+            "active",
+            "Owner",
+            "Reviewer",
+            "Labeler"
+          ]
+        },
+        {
+          "title": "企业积分钱包和预算占用",
+          "body": [
+            "企业积分钱包用于公开任务奖励、会员扣费、提现和服务费用。公开任务发布时会根据奖励、题量和领取规则预估并占用预算；余额不足或预扣占用过高时，任务发布 readiness 会失败。",
+            "处理预算问题时，先看可用余额和冻结占用，再看是否有收集中任务、待结算提交或会员扣费。不要只看总余额，因为总余额包含已经被任务占用的部分。"
+          ],
+          "search_keywords": [
+            "企业积分钱包",
+            "预算",
+            "预扣",
+            "可用余额",
+            "提现"
+          ]
+        },
+        {
+          "title": "AI 钱包和 Provider",
+          "body": [
+            "AI 钱包用于平台共享 Provider 的 AI 调用计费。AI 积分充值本质是从企业积分钱包划转到 AI 钱包。企业自有 Provider 和平台共享 Provider 的可用性、调用历史、成本报表和 AI 钱包流水共同解释一次 AI 调用为什么成功、失败或产生费用。",
+            "如果 LLMComponent 或 AI 预审无法生成，先检查 Provider 是否启用、模型是否可用、AI 钱包是否有余额、企业会员和资源额度是否仍有效。"
+          ],
+          "search_keywords": [
+            "AI 钱包",
+            "Provider",
+            "AI 积分",
+            "调用历史",
+            "成本报表"
+          ]
+        },
+        {
+          "title": "会员额度和存储资源",
+          "body": [
+            "会员和资源配置会限制活跃任务数、成员数量、数据集存储、媒体容量和 AI 调用能力。导入大规模多模态数据、发布多个收集中任务或启用大量 AI 预审前，应先确认额度足够。",
+            "资源不足时，页面通常会在导入、发布或 AI 调用处给出阻断提示。Team Admin 应先处理会员或资源，再回到原业务页面重试。"
+          ],
+          "search_keywords": [
+            "会员额度",
+            "存储容量",
+            "活跃任务数",
+            "资源不足"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notifications-inbox",
+      "title": "通知、公告与个人信箱",
+      "summary": "说明个人信箱、系统提醒、企业公告、接收人预览和消息处理边界。",
+      "status": "available",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "通知",
+        "个人信箱",
+        "企业公告",
+        "action_url"
+      ],
+      "entries": [
+        {
+          "title": "处理个人信箱里的工作提醒",
+          "body": [
+            "个人信箱面向当前登录人，支持未读、已读、星标、已处理、过期、删除和搜索筛选。审核退回、导出完成、权限变化、任务安排变化和失败异常会进入信箱。",
+            "带 action_url 的消息可以跳转到对应工作位置。消息过期或被撤回后仍可作为历史阅读，但不应继续作为待处理事项。"
+          ],
+          "search_keywords": [
+            "个人信箱",
+            "未读",
+            "已处理",
+            "action_url",
+            "审核退回"
+          ]
+        },
+        {
+          "title": "发布企业公告",
+          "body": [
+            "企业公告属于企业治理功能，可按成员、角色或任务上下文分发，并支持接收人预览。发布前应先确认接收范围，避免把管理通知发给无关成员。",
+            "公告可以撤回或删除，相关操作会留下审计记录。普通 Labeler 不接收面向企业管理角色的广播，系统 Agent 也不是人工收件人。"
+          ],
+          "search_keywords": [
+            "企业公告",
+            "接收人预览",
+            "撤回",
+            "删除公告"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "常见失败与排查",
+      "summary": "按真实场景排查登录、权限、领取、导入、模板、图片 Mask、发布、AI、审核、导出、文件和资源问题。",
+      "status": "available",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "排查",
+        "失败",
+        "权限",
+        "request_id"
+      ],
+      "entries": [
+        {
+          "title": "登录、onboarding 和权限不足",
+          "body": [
+            "登录失败时，先确认账号、邮箱、密码、验证码或 OAuth 绑定关系。忘记密码应使用注册邮箱完成重置。OAuth 冲突通常表示第三方身份已经绑定其他账号，或当前账号已绑定同一 provider 的另一身份。",
+            "权限不足时，应检查账号是否完成 onboarding，是否已加入企业，成员状态是否 active，角色是否包含目标入口需要的 Owner、Reviewer 或 Team Admin。"
+          ],
+          "search_keywords": [
+            "登录失败",
+            "OAuth 冲突",
+            "onboarding",
+            "权限不足",
+            "看不到入口"
+          ]
+        },
+        {
+          "title": "数据导入和多模态关联失败",
+          "body": [
+            "普通表格导入失败时，先看行级错误，检查列名、编码、空主键、重复主键和文件格式。Manifest JSONL 导入失败时，逐行检查 JSON 是否合法，media、attachments、derived_context 是否是预期结构。",
+            "媒体没有进入样本时，检查表格中的 URL 字段、Manifest 中的 media 声明、本地素材文件名和主键是否能匹配。未绑定素材不会自动进入 AI 或 Reviewer 上下文，需要通过补上传或重新导入修正。"
+          ],
+          "search_keywords": [
+            "导入失败",
+            "Manifest JSONL",
+            "未绑定素材",
+            "media_schema",
+            "补上传"
+          ]
+        },
+        {
+          "title": "模板预览和标注提交失败",
+          "body": [
+            "模板预览空白时，检查 schema 是否包含 tabs 和 components，ShowItem 是否有可用映射，组件 ID 和答案字段是否唯一。Labeler 提交失败时，检查必填项、文本空值、选择项、JSON 格式、上传状态和图片 Mask 是否已有有效标注。",
+            "图片 Mask 画不上或底图不显示时，先确认底图来源字段存在且是图片，受保护图片是否加载成功，浏览器是否显示正在加载图片素材。底图加载完成后再绘制矩形或涂抹 mask。"
+          ],
+          "search_keywords": [
+            "模板预览空白",
+            "提交失败",
+            "图片 Mask",
+            "JsonEditor",
+            "必填"
+          ]
+        },
+        {
+          "title": "任务发布、AI、审核和导出失败",
+          "body": [
+            "任务发布失败时，按 readiness 逐项处理：模板版本、数据集、题目生成、ShowItem 映射、Reviewer、AI Provider、评分矩阵、任务协议、企业积分钱包、AI 钱包、会员额度和存储容量。Owner 发布后停在待审核是正常状态，需要 Team Admin 审批。",
+            "AI 预审不可用时，检查任务是否启用 AI、Provider 是否启用、模型是否可访问、AI 钱包是否充足。Reviewer 看不到提交时，检查审核分配范围。导出失败或为空时，检查权限、任务范围、通过审核的数据和字段重名。"
+          ],
+          "search_keywords": [
+            "发布失败",
+            "readiness",
+            "AI 预审",
+            "审核分配",
+            "导出失败",
+            "AI 钱包"
+          ]
+        },
+        {
+          "title": "文件预览、资源额度和 request_id",
+          "body": [
+            "文件预览失败时，检查文件引用、存储状态、企业权限和视频预览。资源额度失败通常来自企业积分钱包可用余额不足、预扣占用、AI 钱包余额不足、会员到期、活跃任务数超额、成员数超额或数据集存储容量超额。",
+            "页面提示 request_id 时，请同时记录页面、操作对象、时间、错误信息和 request_id。这样管理员可以结合审计记录和后端日志定位具体请求。"
+          ],
+          "search_keywords": [
+            "文件预览",
+            "资源额度",
+            "request_id",
+            "会员到期",
+            "存储容量"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "常见问题",
+      "summary": "把高频问题集中回答，并指向对应操作模块。",
+      "status": "available",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "FAQ",
+        "常见问题"
+      ],
+      "entries": []
+    }
+  ],
+  "faqs": [
+    {
+      "q": "注册后为什么还要进入 onboarding？",
+      "a": "注册只创建通用账号。onboarding 用来完成账号初始化，决定账号是个人标注员、创建企业，还是通过邀请码加入企业。完成后入口由当前账号的成员状态和角色授权决定，角色调整应由企业成员管理完成。",
+      "audiences": [
+        "labeler",
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "注册",
+        "onboarding",
+        "账号身份唯一"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "为什么我看不到某个工作台入口？",
+      "a": "入口由当前账号的 onboarding 结果、企业成员状态和角色权限决定。请确认账号已加入企业、成员状态为 active，并且被授予 Owner、Reviewer 或 Team Admin 等目标入口需要的角色。",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "权限",
+        "入口",
+        "active"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "个人 Labeler 和企业内 Labeler 有什么区别？",
+      "a": "个人 Labeler 面向公开任务广场，可以领取公开积分任务。企业内 Labeler 处理所属企业分配、流转或允许领取的项目任务，不以公开自由接单和公开积分推荐为主。",
+      "audiences": [
+        "labeler"
+      ],
+      "tags": [
+        "个人 Labeler",
+        "企业内 Labeler",
+        "企业内流转"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "为什么我不能领取任务？",
+      "a": "请确认账号是 Labeler，任务仍在收集中且未过期，任务对当前账号可见，剩余题量和包大小可用，资质、历史准确率、完成数量和任务协议都满足要求。",
+      "audiences": [
+        "labeler"
+      ],
+      "tags": [
+        "领取任务",
+        "任务广场",
+        "资质检查"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "普通文本数据应该怎么导入？",
+      "a": "用 CSV 或 Excel，把第一行作为列名，每一行作为一条样本，并准备 row_id、external_id 或 sample_id 这样的稳定主键。导入后检查行数、字段类型和预览样本。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "CSV",
+        "Excel",
+        "数据集导入"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "多模态数据怎样和表格行关联？",
+      "a": "可以在表格行中放 image_url、audio_url、video_url 等媒体字段，也可以用 Manifest JSONL 的 media 数组逐行声明媒体。无法匹配到具体行的素材会成为未绑定素材，不会默认进入 AI 或 Reviewer 上下文。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "多模态",
+        "media_schema",
+        "Manifest JSONL",
+        "未绑定素材"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "图片 Mask 标注底图不显示怎么办？",
+      "a": "先检查模板里的 ImageMaskAnnotation 是否配置了正确的 source_field 或 source_binding，再检查数据集中是否有 image_url 或行级图片 media。受保护图片需要当前账号有企业权限并等待素材加载完成。",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer"
+      ],
+      "tags": [
+        "ImageMaskAnnotation",
+        "图片 Mask",
+        "image_url"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "为什么任务发布失败？",
+      "a": "任务发布前必须通过 readiness 检查。常见缺失包括已发布模板版本、数据集样本、题目生成、ShowItem 映射、Reviewer、AI Provider、评分矩阵、任务协议、会员额度、企业积分钱包和 AI 钱包。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "发布任务",
+        "readiness"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "Owner 发布后为什么任务停在待审核？",
+      "a": "Owner 发布后进入待审核是正常流程。Team Admin 需要确认预算、资源、分发、合规和质量设置后，任务才会进入收集中；驳回后 Owner 按意见修改再提交。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "pending_review",
+        "发布审批"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "为什么数据集不能编辑或删除？",
+      "a": "如果数据集已经被待审核、收集中、暂停或结束的任务引用，系统会限制改写或删除源数据，避免标注回放、AI 上下文、Reviewer 上下文和导出结果发生漂移。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "数据集",
+        "源数据锁定"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "为什么模板发布后不能直接改？",
+      "a": "任务绑定的是已发布模板版本快照。发布后如需修改，应创建新的草稿版本并再次发布；历史任务继续使用旧版本，以保证历史提交可以解释和回放。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "模板",
+        "版本"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "AI 辅助作答会自动提交答案吗？",
+      "a": "不会。LLMComponent 只返回建议、解释和字段依据，Labeler 需要手动判断、采纳或改写，正式提交仍由标注员确认。",
+      "audiences": [
+        "labeler"
+      ],
+      "tags": [
+        "AI 辅助",
+        "LLMComponent"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "AI 预审通过是否等于最终通过？",
+      "a": "不等于。AI 预审只提供评分、建议和风险提示，不直接改变最终状态。最终通过、退回或修改意见由 Reviewer 在人工审核中决定。",
+      "audiences": [
+        "reviewer",
+        "owner",
+        "team_admin",
+        "labeler"
+      ],
+      "tags": [
+        "AI 预审",
+        "人工审核"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "Reviewer 看不到某些提交是什么原因？",
+      "a": "Reviewer 通常只能看到分配给自己的审核范围。请确认任务已经产生提交，提交进入人工审核阶段，并且当前 Reviewer 在该任务的审核分配范围内。",
+      "audiences": [
+        "reviewer",
+        "team_admin",
+        "owner"
+      ],
+      "tags": [
+        "Reviewer",
+        "审核队列",
+        "assigned_only"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "为什么导出失败或无法下载？",
+      "a": "请确认当前账号有导出权限，目标范围内有通过人工审核的数据，字段配置没有重名冲突。已完成导出可以在导出历史中继续下载，下载行为会记录审计日志。",
+      "audiences": [
+        "owner",
+        "team_admin",
+        "reviewer"
+      ],
+      "tags": [
+        "导出",
+        "下载"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "企业积分钱包和 AI 钱包有什么区别？",
+      "a": "企业积分钱包用于任务奖励、会员扣费、提现和服务费用；AI 钱包用于平台共享 Provider 的 AI 调用计费。AI 积分充值本质是从企业积分钱包划转到 AI 钱包。",
+      "audiences": [
+        "owner",
+        "team_admin"
+      ],
+      "tags": [
+        "企业积分钱包",
+        "AI 钱包"
+      ],
+      "status": "available"
+    },
+    {
+      "q": "页面提示 request_id 时应该怎么处理？",
+      "a": "request_id 用于定位具体请求。反馈问题时请一并提供页面、操作对象、时间、错误信息和 request_id，管理员可以结合审计记录和日志定位问题。",
+      "audiences": [
+        "labeler",
+        "owner",
+        "reviewer",
+        "team_admin"
+      ],
+      "tags": [
+        "request_id",
+        "排查",
+        "审计"
+      ],
+      "status": "available"
+    }
+  ]
+}
